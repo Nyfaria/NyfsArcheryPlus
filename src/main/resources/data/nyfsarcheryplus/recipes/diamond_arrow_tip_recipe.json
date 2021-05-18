@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " L ",
+        " A ",
+        "   "
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:flint"
+        },
+        "A": {
+            "item": "minecraft:diamond"
+        }
+    },
+    "result": {
+        "item": "nyfsarcheryplus:diamond_arrow_tip",
+        "count": 8
+    }
+}

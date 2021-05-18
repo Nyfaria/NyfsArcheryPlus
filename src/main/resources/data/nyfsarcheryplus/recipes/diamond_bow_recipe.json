@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " AL",
+        "A L",
+        " AL"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:string"
+        },
+        "A": {
+            "item": "minecraft:diamond"
+        }
+    },
+    "result": {
+        "item": "nyfsarcheryplus:diamond_bow",
+        "count": 1
+    },
+    "group": "tools"
+}

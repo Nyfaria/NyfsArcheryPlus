@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " AL",
+        "A L",
+        " AL"
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:string"
+        },
+        "A": {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+    "result": {
+        "item": "nyfsarcheryplus:iron_bow",
+        "count": 1
+    },
+    "group": "tools"
+}

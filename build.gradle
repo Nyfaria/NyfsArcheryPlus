@@ -13,8 +13,8 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
 version = '0.1.0'
-group = 'com.nyfaria.nyfsbows' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = 'nyfsbows'
+group = 'com.nyfaria.nyfsarcheryplus' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = 'nyfsarcheryplus'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 

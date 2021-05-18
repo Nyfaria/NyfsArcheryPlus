@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " A ",
+        " B ",
+        " L "
+    ],
+    "key": {
+        "L": {
+            "item": "minecraft:feather"
+        },
+        "A": {
+            "item": "nyfsarcheryplus:stone_arrow_tip"
+        },
+        "B": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "nyfsarcheryplus:stone_tipped_arrow",
+        "count": 3
+    }
+}

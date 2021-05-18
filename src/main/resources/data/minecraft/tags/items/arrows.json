@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+	"nyfsarcheryplus:stone_tipped_arrow",
+	"nyfsarcheryplus:gold_tipped_arrow",
+	"nyfsarcheryplus:iron_tipped_arrow",
+	"nyfsarcheryplus:diamond_tipped_arrow",
+	"nyfsarcheryplus:netherite_tipped_arrow"
+  ]
+}
