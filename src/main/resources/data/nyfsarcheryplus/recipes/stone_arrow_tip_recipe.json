@@ -1,20 +1,13 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        " L ",
-        " A ",
-        "   "
-    ],
-    "key": {
-        "L": {
-            "item": "minecraft:flint"
-        },
-        "A": {
+    "type": "minecraft:smithing",
+    "base": {
+        "item": "minecraft:flint"
+    },
+    "addition": {
             "item": "minecraft:stone"
-        }
     },
     "result": {
         "item": "nyfsarcheryplus:stone_arrow_tip",
-        "count": 8
+        "count": 9
     }
 }
