@@ -13,7 +13,7 @@ public class DiamondBowItem extends BowItem {
 	}
 	@Override
 	public boolean isValidRepairItem(ItemStack p_82789_1_, ItemStack p_82789_2_) {
-		if(p_82789_2_.getItem() == Items.DIAMOND_SWORD) {
+		if(p_82789_2_.getItem() == Items.DIAMOND) {
 			return true;
 		}
 		return false;

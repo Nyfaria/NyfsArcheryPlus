@@ -15,11 +15,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class EntityInit {
 	
 	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, NyfsArcheryPlus.MOD_ID);
+
     private static final String STONE_ARROW_LOCATION = "stone_tipped_arrow_entity";
     private static final String GOLD_ARROW_LOCATION = "gold_tipped_arrow_entity";
     private static final String IRON_ARROW_LOCATION = "iron_tipped_arrow_entity";
     private static final String DIAMOND_ARROW_LOCATION = "diamond_tipped_arrow_entity";
     private static final String NETHERITE_ARROW_LOCATION = "netherite_tipped_arrow_entity";
+
 	public static final EntityType<StoneTippedArrowEntity> STA_ENTITYTYPE = EntityType.Builder.<StoneTippedArrowEntity>of(StoneTippedArrowEntity::new, EntityClassification.MISC)
 	 		.sized(0.5f, 0.5f).build(STONE_ARROW_LOCATION);
     public static final RegistryObject<EntityType<StoneTippedArrowEntity>> STONE_TIPPED_ARROW_ENTITY = 
