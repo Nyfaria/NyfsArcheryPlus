@@ -34,11 +34,11 @@ public class ClientProxy extends CommonProxy{
         ItemModelsProperties.register(ItemInit.GOLD_BOW.get(), new ResourceLocation("pull"), pull);
         ItemModelsProperties.register(ItemInit.NETHERITE_BOW.get(), new ResourceLocation("pulling"), pulling);
         ItemModelsProperties.register(ItemInit.NETHERITE_BOW.get(), new ResourceLocation("pull"), pull);
-        RenderingRegistry.registerEntityRenderingHandler(EntityInit.STA_ENTITYTYPE, manager -> new RenderStoneTippedArrow(manager));
-        RenderingRegistry.registerEntityRenderingHandler(EntityInit.GTA_ENTITYTYPE, manager -> new RenderGoldTippedArrow(manager));
-        RenderingRegistry.registerEntityRenderingHandler(EntityInit.ITA_ENTITYTYPE, manager -> new RenderIronTippedArrow(manager));
-        RenderingRegistry.registerEntityRenderingHandler(EntityInit.DTA_ENTITYTYPE, manager -> new RenderDiamondTippedArrow(manager));
-        RenderingRegistry.registerEntityRenderingHandler(EntityInit.NTA_ENTITYTYPE, manager -> new RenderNetheriteTippedArrow(manager));
+        RenderingRegistry.registerEntityRenderingHandler(EntityInit.STA_ENTITYTYPE, RenderStoneTippedArrow::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityInit.GTA_ENTITYTYPE, RenderGoldTippedArrow::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityInit.ITA_ENTITYTYPE, RenderIronTippedArrow::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityInit.DTA_ENTITYTYPE, RenderDiamondTippedArrow::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityInit.NTA_ENTITYTYPE, RenderNetheriteTippedArrow::new);
     }
 
     @Override

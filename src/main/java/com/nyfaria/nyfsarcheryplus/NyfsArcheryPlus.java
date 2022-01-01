@@ -22,7 +22,7 @@ public class NyfsArcheryPlus
     private static final Logger LOGGER = LogManager.getLogger();
 	public static final String MOD_ID = "nyfsarcheryplus";
 
-    public static CommonProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new CommonProxy()); 
+    public static CommonProxy proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
 
     public NyfsArcheryPlus() {
 

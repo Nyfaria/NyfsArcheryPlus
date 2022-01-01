@@ -10,6 +10,11 @@ import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.LogicalSide;
 
 public class DiamondTippedArrowItem extends ArrowItem {
 
@@ -26,4 +31,11 @@ public class DiamondTippedArrowItem extends ArrowItem {
         int enchant = net.minecraft.enchantment.EnchantmentHelper.getItemEnchantmentLevel(net.minecraft.enchantment.Enchantments.INFINITY_ARROWS, bow);
         return enchant > 0 && this.getClass() == DiamondTippedArrowItem.class;
     }
+    @SubscribeEvent
+	public void onTick(TickEvent.WorldTickEvent event){
+		if(event.side == LogicalSide.SERVER)
+			if(event.world.getGameTime() % 12000 == 0){
+
+			}
+	}
 }

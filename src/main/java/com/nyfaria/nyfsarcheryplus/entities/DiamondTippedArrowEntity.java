@@ -25,6 +25,7 @@ public class DiamondTippedArrowEntity extends AbstractArrowEntity {
 	}
     public DiamondTippedArrowEntity(final EntityType<? extends DiamondTippedArrowEntity> p_i50172_1_, final World p_i50172_2_) {
         super(p_i50172_1_, p_i50172_2_);
+
 		this.setBaseDamage(6);
     }
     
