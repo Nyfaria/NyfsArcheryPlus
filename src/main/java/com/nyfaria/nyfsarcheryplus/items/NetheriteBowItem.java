@@ -1,12 +1,14 @@
 package com.nyfaria.nyfsarcheryplus.items;
 
-import net.minecraft.item.BowItem;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.world.item.BowItem;
+import net.minecraft.world.item.CreativeModeTab;
+
+import net.minecraft.world.item.Item.Properties;
 
 public class NetheriteBowItem extends BowItem {
 
 	public NetheriteBowItem(Properties properties) {
-		super(new Properties().stacksTo(1).defaultDurability(2842).tab(ItemGroup.TAB_COMBAT));
+		super(new Properties().stacksTo(1).defaultDurability(2842).tab(CreativeModeTab.TAB_COMBAT));
 	}
 
 }
