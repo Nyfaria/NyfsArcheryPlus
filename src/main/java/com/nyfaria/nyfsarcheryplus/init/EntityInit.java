@@ -10,7 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class EntityInit {
 	
-	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, NyfsArcheryPlus.MODID);
+	public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, NyfsArcheryPlus.MODID);
 
     public static final RegistryObject<EntityType<AdvancedTippedArrowEntity>> ADVANCED_TIPPED_ARROW_ENTITY =
 			ENTITIES.register("arrow", () -> EntityType.Builder.<AdvancedTippedArrowEntity>of(AdvancedTippedArrowEntity::new, MobCategory.MISC)
