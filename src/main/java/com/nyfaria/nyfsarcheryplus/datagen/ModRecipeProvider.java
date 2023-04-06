@@ -103,7 +103,5 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlocks("has_item", has(item))
                 .save(recipeSaver, new ResourceLocation(NyfsArcheryPlus.MODID,collection.getTier().getName() + "_arrowhead"));
     }
-    private static InventoryChangeTrigger.TriggerInstance has(TagKey<Item> p_206407_) {
-        return inventoryTrigger(ItemPredicate.Builder.item().of(p_206407_).build());
-    }
+
 }
