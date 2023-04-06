@@ -1,6 +1,6 @@
 {
   "parent": "item/bow",
   "textures": {
-    "layer0": "nyfsarcheryplus:items/diamond_bow_pulling_0"
+    "layer0": "nyfsarcheryplus:item/diamond_bow_pulling_0"
   }
 }

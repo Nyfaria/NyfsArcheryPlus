@@ -1,0 +1,6 @@
+{
+  "parent": "item/crossbow",
+  "textures": {
+    "layer0": "nyfsarcheryplus:item/golden_crossbow_pulling_2"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "parent": "item/bow",
   "textures": {
-    "layer0": "nyfsarcheryplus:items/netherite_bow_pulling_0"
+    "layer0": "nyfsarcheryplus:item/netherite_bow_pulling_0"
   }
 }

@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "nyfsarcheryplus:items/diamond_shard"
+		"layer0": "nyfsarcheryplus:item/diamond_shard"
 		}
 }

@@ -1,6 +1,6 @@
 {
 	"parent": "item/generated",
 	"textures": {
-		"layer0": "nyfsarcheryplus:items/netherite_tipped_arrow"
+		"layer0": "nyfsarcheryplus:item/netherite_tipped_arrow"
 		}
 }

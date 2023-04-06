@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "nyfsarcheryplus:items/netherite_bow"
+    "layer0": "nyfsarcheryplus:item/netherite_bow"
   },
   "display": {
     "thirdperson_righthand": {

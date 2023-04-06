@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "nyfsarcheryplus:items/diamond_bow"
+    "layer0": "nyfsarcheryplus:item/diamond_bow"
   },
   "display": {
     "thirdperson_righthand": {

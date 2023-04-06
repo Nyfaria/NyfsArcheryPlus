@@ -1,16 +1,27 @@
 package com.nyfaria.nyfsarcheryplus;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import net.minecraftforge.common.MinecraftForge;
+import com.nyfaria.nyfsarcheryplus.datagen.ModBlockStateProvider;
+import com.nyfaria.nyfsarcheryplus.datagen.ModItemModelProvider;
+import com.nyfaria.nyfsarcheryplus.datagen.ModLangProvider;
+import com.nyfaria.nyfsarcheryplus.datagen.ModLootTableProvider;
+import com.nyfaria.nyfsarcheryplus.datagen.ModRecipeProvider;
+import com.nyfaria.nyfsarcheryplus.datagen.ModSoundProvider;
+import com.nyfaria.nyfsarcheryplus.init.EntityInit;
+import com.nyfaria.nyfsarcheryplus.init.ItemInit;
+import net.minecraft.data.DataGenerator;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.forge.event.lifecycle.GatherDataEvent;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(NyfsArcheryPlus.MODID)
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class NyfsArcheryPlus
 {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -23,11 +34,29 @@ public class NyfsArcheryPlus
     	bus.addListener(this::setup);
     	
     	ItemInit.ITEMS.register(bus);
-    	ItemInit.preInit();
     	EntityInit.ENTITIES.register(bus);
     }
 
     public void setup(final FMLCommonSetupEvent event) {
-        
+		ItemInit.preInit();
     }
+
+	@SubscribeEvent
+	public static void onGatherData(GatherDataEvent event) {
+		DataGenerator generator = event.getGenerator();
+		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		boolean includeServer = event.includeServer();
+		boolean includeClient = event.includeClient();
+
+		if(includeServer) {
+			generator.addProvider(new ModRecipeProvider(generator));
+			generator.addProvider(new ModLootTableProvider(generator));
+			generator.addProvider(new ModSoundProvider(generator, existingFileHelper));
+		}
+		if(includeClient) {
+			generator.addProvider(new ModItemModelProvider(generator, existingFileHelper));
+			generator.addProvider(new ModBlockStateProvider(generator, existingFileHelper));
+			generator.addProvider(new ModLangProvider(generator));
+		}
+	}
 }
