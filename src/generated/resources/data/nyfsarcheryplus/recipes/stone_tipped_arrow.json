@@ -10,7 +10,7 @@
       "item": "minecraft:stick"
     },
     "I": {
-      "tag": "forge:stone"
+      "item": "nyfsarcheryplus:stone_arrowhead"
     },
     "F": {
       "item": "minecraft:feather"
