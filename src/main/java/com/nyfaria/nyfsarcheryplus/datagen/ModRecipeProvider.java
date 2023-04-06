@@ -14,6 +14,7 @@ import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
@@ -54,7 +55,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("F")
                 .unlockedBy("has_item", has(item))
                 .save(recipeSaver);
-        UpgradeRecipeBuilder.smithing(Ingredient.of(Items.FLINT),Ingredient.of(item), collection.getArrowTip())
+        ArrowHeadRecipeBuilder.arrowHead(Ingredient.of(Items.FLINT),Ingredient.of(item), new ItemStack(collection.getArrowTip(),9))
                 .unlocks("has_item", has(item))
                 .save(recipeSaver, new ResourceLocation(NyfsArcheryPlus.MODID,collection.getTier().getName() + "_arrowhead"));
         if(collection.getCrossbow()!=null) {
@@ -64,15 +65,29 @@ public class ModRecipeProvider extends RecipeProvider {
         }
     }
     public static void archeryCollectionRecipe(ItemLike item, ArcheryCollection<?> collection, Consumer<FinishedRecipe> recipeSaver){
-        if(collection.getBow()!=null) {
-            ShapedRecipeBuilder.shaped(collection.getBow())
-                    .define('S', Items.STICK)
-                    .define('I', item)
-                    .pattern(" IS")
-                    .pattern("I S")
-                    .pattern(" IS")
-                    .unlockedBy("has_item", has(item))
-                    .save(recipeSaver);
+        if(collection.getTier() != ArcheryTiers.NETHERITE) {
+            if (collection.getBow() != null) {
+                ShapedRecipeBuilder.shaped(collection.getBow())
+                        .define('S', Items.STICK)
+                        .define('I', item)
+                        .pattern(" IS")
+                        .pattern("I S")
+                        .pattern(" IS")
+                        .unlockedBy("has_item", has(item))
+                        .save(recipeSaver);
+            }
+            if (collection.getCrossbow() != null) {
+                UpgradeRecipeBuilder.smithing(Ingredient.of(Items.CROSSBOW), Ingredient.of(item), collection.getCrossbow())
+                        .unlocks("has_item", has(item))
+                        .save(recipeSaver, new ResourceLocation(NyfsArcheryPlus.MODID, collection.getTier().getName() + "_crossbow_upgrade"));
+            }
+        } else {
+            UpgradeRecipeBuilder.smithing(Ingredient.of(ItemInit.DIAMOND_COLLECTION.getBow()),Ingredient.of(item), collection.getBow())
+                    .unlocks("has_item", has(item))
+                    .save(recipeSaver, new ResourceLocation(NyfsArcheryPlus.MODID, collection.getTier().getName() + "_bow_upgrade"));
+            UpgradeRecipeBuilder.smithing(Ingredient.of(ItemInit.DIAMOND_COLLECTION.getCrossbow()),Ingredient.of(item), collection.getCrossbow())
+                    .unlocks("has_item", has(item))
+                    .save(recipeSaver, new ResourceLocation(NyfsArcheryPlus.MODID, collection.getTier().getName() + "_crossbow_upgrade"));
         }
         ShapedRecipeBuilder.shaped(collection.getTippedArrow())
                 .define('S', Items.STICK)
@@ -84,14 +99,9 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(item))
                 .save(recipeSaver);
 
-        UpgradeRecipeBuilder.smithing(Ingredient.of(Items.FLINT),Ingredient.of(item), collection.getArrowTip())
+        ArrowHeadRecipeBuilder.arrowHead(Ingredient.of(Items.FLINT),Ingredient.of(item), new ItemStack(collection.getArrowTip(),9))
                 .unlocks("has_item", has(item))
                 .save(recipeSaver, new ResourceLocation(NyfsArcheryPlus.MODID,collection.getTier().getName() + "_arrowhead"));
-        if(collection.getCrossbow()!=null) {
-            UpgradeRecipeBuilder.smithing(Ingredient.of(Items.CROSSBOW), Ingredient.of(item), collection.getCrossbow())
-                    .unlocks("has_item", has(item))
-                    .save(recipeSaver, new ResourceLocation(NyfsArcheryPlus.MODID, collection.getTier().getName() + "_crossbow_upgrade"));
-        }
     }
     private static InventoryChangeTrigger.TriggerInstance has(TagKey<Item> p_206407_) {
         return inventoryTrigger(ItemPredicate.Builder.item().of(p_206407_).build());

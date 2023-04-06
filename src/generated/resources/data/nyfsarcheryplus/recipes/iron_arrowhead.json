@@ -7,6 +7,7 @@
     "item": "minecraft:iron_ingot"
   },
   "result": {
-    "item": "nyfsarcheryplus:iron_arrowhead"
+    "item": "nyfsarcheryplus:iron_arrowhead",
+    "count": 9
   }
 }

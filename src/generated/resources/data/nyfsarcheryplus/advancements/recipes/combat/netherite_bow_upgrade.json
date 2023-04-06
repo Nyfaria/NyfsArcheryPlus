@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "nyfsarcheryplus:netherite_bow"
+      "nyfsarcheryplus:netherite_bow_upgrade"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "nyfsarcheryplus:netherite_bow"
+        "recipe": "nyfsarcheryplus:netherite_bow_upgrade"
       }
     }
   },
