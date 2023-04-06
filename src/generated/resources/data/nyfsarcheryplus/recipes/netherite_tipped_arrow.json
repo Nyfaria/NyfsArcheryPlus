@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "  I",
-    " S ",
-    "F  "
-  ],
   "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "I": {
-      "item": "minecraft:netherite_ingot"
-    },
     "F": {
       "item": "minecraft:feather"
+    },
+    "I": {
+      "item": "nyfsarcheryplus:netherite_arrowhead"
+    },
+    "S": {
+      "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    "I",
+    "S",
+    "F"
+  ],
   "result": {
     "item": "nyfsarcheryplus:netherite_tipped_arrow"
   }

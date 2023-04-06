@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:netherite_ingot"
+              "minecraft:iron_ingot"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nyfsarcheryplus:netherite_crossbow_upgrade"
+        "recipe": "nyfsarcheryplus:iron_bow_alt"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "nyfsarcheryplus:netherite_crossbow_upgrade"
+      "nyfsarcheryplus:iron_bow_alt"
     ]
   }
 }

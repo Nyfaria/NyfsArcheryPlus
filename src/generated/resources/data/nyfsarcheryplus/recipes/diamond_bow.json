@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "item": "minecraft:diamond"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
   "pattern": [
     " IS",
     "I S",
     " IS"
   ],
-  "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "I": {
-      "item": "minecraft:diamond"
-    }
-  },
   "result": {
     "item": "nyfsarcheryplus:diamond_bow"
   }

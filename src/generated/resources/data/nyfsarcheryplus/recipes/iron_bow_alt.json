@@ -9,9 +9,9 @@
     }
   },
   "pattern": [
-    " IS",
-    "I S",
-    " IS"
+    "SI ",
+    "S I",
+    "SI "
   ],
   "result": {
     "item": "nyfsarcheryplus:iron_bow"

@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "  I",
-    " S ",
-    "F  "
-  ],
   "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "I": {
-      "item": "minecraft:diamond"
-    },
     "F": {
       "item": "minecraft:feather"
+    },
+    "I": {
+      "item": "nyfsarcheryplus:diamond_arrowhead"
+    },
+    "S": {
+      "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    "I",
+    "S",
+    "F"
+  ],
   "result": {
     "item": "nyfsarcheryplus:diamond_tipped_arrow"
   }

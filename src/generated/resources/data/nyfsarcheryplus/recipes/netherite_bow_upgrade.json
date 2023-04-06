@@ -1,10 +1,10 @@
 {
   "type": "minecraft:smithing",
-  "base": {
-    "item": "nyfsarcheryplus:diamond_bow"
-  },
   "addition": {
     "item": "minecraft:netherite_ingot"
+  },
+  "base": {
+    "item": "nyfsarcheryplus:diamond_bow"
   },
   "result": {
     "item": "nyfsarcheryplus:netherite_bow"

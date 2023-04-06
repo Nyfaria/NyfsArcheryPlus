@@ -1,13 +1,13 @@
 {
   "type": "minecraft:smithing",
-  "base": {
-    "item": "minecraft:flint"
-  },
   "addition": {
     "item": "minecraft:diamond"
   },
+  "base": {
+    "item": "minecraft:flint"
+  },
   "result": {
-    "item": "nyfsarcheryplus:diamond_arrowhead",
-    "count": 9
+    "count": 9,
+    "item": "nyfsarcheryplus:diamond_arrowhead"
   }
 }

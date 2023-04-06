@@ -45,15 +45,23 @@ public class ModRecipeProvider extends RecipeProvider {
                     .pattern(" IS")
                     .unlockedBy("has_item", has(item))
                     .save(recipeSaver);
+            ShapedRecipeBuilder.shaped(collection.getBow())
+                    .define('S', Items.STICK)
+                    .define('I', item)
+                    .pattern("SI ")
+                    .pattern("S I")
+                    .pattern("SI ")
+                    .unlockedBy("has_item", has(item))
+                    .save(recipeSaver, new ResourceLocation(NyfsArcheryPlus.MODID, collection.getTier().getName() + "_bow_alt"));
         }
         ShapedRecipeBuilder.shaped(collection.getTippedArrow())
                 .define('S', Items.STICK)
-                .define('I', item)
+                .define('I', collection.getArrowTip())
                 .define('F', Items.FEATHER)
                 .pattern("I")
                 .pattern("S")
                 .pattern("F")
-                .unlockedBy("has_item", has(item))
+                .unlockedBy("has_item", has(collection.getArrowTip()))
                 .save(recipeSaver);
         ArrowHeadRecipeBuilder.arrowHead(Ingredient.of(Items.FLINT),Ingredient.of(item), new ItemStack(collection.getArrowTip(),9))
                 .unlocks("has_item", has(item))
@@ -75,6 +83,14 @@ public class ModRecipeProvider extends RecipeProvider {
                         .pattern(" IS")
                         .unlockedBy("has_item", has(item))
                         .save(recipeSaver);
+                ShapedRecipeBuilder.shaped(collection.getBow())
+                        .define('S', Items.STICK)
+                        .define('I', item)
+                        .pattern("SI ")
+                        .pattern("S I")
+                        .pattern("SI ")
+                        .unlockedBy("has_item", has(item))
+                        .save(recipeSaver, new ResourceLocation(NyfsArcheryPlus.MODID, collection.getTier().getName() + "_bow_alt"));
             }
             if (collection.getCrossbow() != null) {
                 UpgradeRecipeBuilder.smithing(Ingredient.of(Items.CROSSBOW), Ingredient.of(item), collection.getCrossbow())
@@ -91,12 +107,12 @@ public class ModRecipeProvider extends RecipeProvider {
         }
         ShapedRecipeBuilder.shaped(collection.getTippedArrow())
                 .define('S', Items.STICK)
-                .define('I', item)
+                .define('I', collection.getArrowTip())
                 .define('F', Items.FEATHER)
-                .pattern("  I")
-                .pattern(" S ")
-                .pattern("F  ")
-                .unlockedBy("has_item", has(item))
+                .pattern("I")
+                .pattern("S")
+                .pattern("F")
+                .unlockedBy("has_item", has(collection.getArrowTip()))
                 .save(recipeSaver);
 
         ArrowHeadRecipeBuilder.arrowHead(Ingredient.of(Items.FLINT),Ingredient.of(item), new ItemStack(collection.getArrowTip(),9))

@@ -2,18 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "I": {
-      "item": "minecraft:iron_ingot"
+      "item": "minecraft:gold_ingot"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
-    " IS",
-    "I S",
-    " IS"
+    "SI ",
+    "S I",
+    "SI "
   ],
   "result": {
-    "item": "nyfsarcheryplus:iron_bow"
+    "item": "nyfsarcheryplus:golden_bow"
   }
 }
