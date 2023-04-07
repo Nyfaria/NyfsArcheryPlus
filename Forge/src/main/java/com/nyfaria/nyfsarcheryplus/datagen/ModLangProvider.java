@@ -26,7 +26,7 @@ public class ModLangProvider extends LanguageProvider {
             "sus", ""
     );
 
-    public ModLangProvider(DataGenerator gen) {
+    public ModLangProvider(PackOutput gen) {
         super(gen, Constants.MODID, "en_us");
     }
 

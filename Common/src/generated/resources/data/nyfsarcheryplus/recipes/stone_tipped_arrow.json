@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": {
+      "item": "minecraft:feather"
+    },
+    "I": {
+      "item": "nyfsarcheryplus:stone_arrowhead"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "I",
+    "S",
+    "F"
+  ],
+  "result": {
+    "item": "nyfsarcheryplus:stone_tipped_arrow"
+  }
+}

@@ -1,34 +1,34 @@
 {
-    "schemaVersion": 1,
-    "id": "${mod_id}",
-    "version": "${mod_version}",
-  
-    "name": "Example Mod",
-    "description": "${mod_description}",
-    "authors": [
-      "${mod_authors}"
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "Example Mod",
+  "description": "${mod_description}",
+  "authors": [
+    "${mod_authors}"
+  ],
+  "license": "ARR",
+  "icon": "assets/modid/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.nyfaria.nyfsarcheryplus.NyfsArcheryPlusFabric"
     ],
-    "license": "ARR",
-    "icon": "assets/modid/icon.png",
-  
-    "environment": "*",
-    "entrypoints": {
-      "main": [
-        "com.nyfaria.nyfsarcheryplus.NyfsArcheryPlusFabric"
-      ]
-    },
-    "mixins": [
-      "${mod_id}.mixins.json"
-    ],
-  
-    "depends": {
-      "fabricloader": "${fabric_loader_version_range}",
-      "fabric": "*",
-      "minecraft": "${minecraft_version}",
-      "java": ">=17"
-    },
-    "suggests": {
-      "another-mod": "*"
-    }
+    "client": [
+      "com.nyfaria.nyfsarcheryplus.NyfsArcheryPlusFabricClient"
+    ]
+  },
+  "mixins": [
+    "${mod_id}.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "${fabric_loader_version_range}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
+}
   

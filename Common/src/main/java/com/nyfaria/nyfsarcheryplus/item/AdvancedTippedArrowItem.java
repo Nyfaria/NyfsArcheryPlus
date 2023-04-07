@@ -21,6 +21,7 @@ public class AdvancedTippedArrowItem extends ArrowItem {
 	@Override
 	public AbstractArrow createArrow(Level world, ItemStack stack, LivingEntity player) {
 		return new AdvancedTippedArrowEntity(world,player,tier);
+//		return arrow;
 	}
 
 

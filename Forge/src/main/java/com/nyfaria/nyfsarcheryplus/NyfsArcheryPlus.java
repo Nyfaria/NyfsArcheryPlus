@@ -39,7 +39,7 @@ public class NyfsArcheryPlus {
         boolean includeClient = event.includeClient();
 
         generator.addProvider(includeServer, new ModRecipeProvider(output));
-        generator.addProvider(includeClient, new ModLangProvider(generator));
+        generator.addProvider(includeClient, new ModLangProvider(output));
 
     }
 }

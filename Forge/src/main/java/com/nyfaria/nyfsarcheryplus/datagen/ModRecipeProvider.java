@@ -36,22 +36,25 @@ public class ModRecipeProvider extends RecipeProvider {
     }
     public static void archeryCollectionRecipe(TagKey<Item> item, ArcheryCollection<?> collection, Consumer<FinishedRecipe> recipeSaver){
         if(collection.getBow()!=null) {
-            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, collection.getBow())
-                    .define('S', Items.STRING)
-                    .define('I', item)
-                    .pattern(" IS")
-                    .pattern("I S")
-                    .pattern(" IS")
-                    .unlockedBy("has_item", has(item))
-                    .save(recipeSaver);
-            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, collection.getBow())
-                    .define('S', Items.STRING)
-                    .define('I', item)
-                    .pattern("SI ")
-                    .pattern("S I")
-                    .pattern("SI ")
-                    .unlockedBy("has_item", has(item))
-                    .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_bow_alt"));
+            UpgradeRecipeBuilder.smithing(Ingredient.of( collection.getTier().getUpgradeFrom().get()), Ingredient.of(item), RecipeCategory.COMBAT,collection.getBow())
+                    .unlocks("has_item", has(item))
+                    .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_bow_upgrade"));
+//            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, collection.getBow())
+//                    .define('S', Items.STRING)
+//                    .define('I', item)
+//                    .pattern(" IS")
+//                    .pattern("I S")
+//                    .pattern(" IS")
+//                    .unlockedBy("has_item", has(item))
+//                    .save(recipeSaver);
+//            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, collection.getBow())
+//                    .define('S', Items.STRING)
+//                    .define('I', item)
+//                    .pattern("SI ")
+//                    .pattern("S I")
+//                    .pattern("SI ")
+//                    .unlockedBy("has_item", has(item))
+//                    .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_bow_alt"));
         }
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, collection.getTippedArrow())
                 .define('S', Items.STICK)
@@ -74,22 +77,9 @@ public class ModRecipeProvider extends RecipeProvider {
     public static void archeryCollectionRecipe(ItemLike item, ArcheryCollection<?> collection, Consumer<FinishedRecipe> recipeSaver){
         if(collection.getTier() != ArcheryTiers.NETHERITE) {
             if (collection.getBow() != null) {
-                ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, collection.getBow())
-                        .define('S', Items.STRING)
-                        .define('I', item)
-                        .pattern(" IS")
-                        .pattern("I S")
-                        .pattern(" IS")
-                        .unlockedBy("has_item", has(item))
-                        .save(recipeSaver);
-                ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,collection.getBow())
-                        .define('S', Items.STRING)
-                        .define('I', item)
-                        .pattern("SI ")
-                        .pattern("S I")
-                        .pattern("SI ")
-                        .unlockedBy("has_item", has(item))
-                        .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_bow_alt"));
+                UpgradeRecipeBuilder.smithing(Ingredient.of( collection.getTier().getUpgradeFrom().get()), Ingredient.of(item), RecipeCategory.COMBAT,collection.getBow())
+                        .unlocks("has_item", has(item))
+                        .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_bow_upgrade"));
             }
             if (collection.getCrossbow() != null) {
                 UpgradeRecipeBuilder.smithing(Ingredient.of(Items.CROSSBOW), Ingredient.of(item), RecipeCategory.COMBAT,collection.getCrossbow())

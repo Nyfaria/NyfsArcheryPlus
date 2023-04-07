@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "minecraft:crossbow"
+  },
+  "result": {
+    "item": "nyfsarcheryplus:diamond_crossbow"
+  }
+}

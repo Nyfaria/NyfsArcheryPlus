@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "base": {
+    "item": "nyfsarcheryplus:diamond_crossbow"
+  },
+  "result": {
+    "item": "nyfsarcheryplus:netherite_crossbow"
+  }
+}

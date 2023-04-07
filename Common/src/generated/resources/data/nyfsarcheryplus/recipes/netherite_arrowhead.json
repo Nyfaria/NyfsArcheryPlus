@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "base": {
+    "item": "minecraft:flint"
+  },
+  "result": {
+    "count": 9,
+    "item": "nyfsarcheryplus:netherite_arrowhead"
+  }
+}
