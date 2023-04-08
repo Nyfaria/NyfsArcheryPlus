@@ -2,11 +2,9 @@ package com.nyfaria.nyfsarcheryplus.datagen;
 
 import com.google.common.collect.ImmutableMap;
 import com.nyfaria.nyfsarcheryplus.Constants;
-import com.nyfaria.nyfsarcheryplus.NyfsArcheryPlus;
 import com.nyfaria.nyfsarcheryplus.init.EntityInit;
 import com.nyfaria.nyfsarcheryplus.init.ItemInit;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -26,7 +24,7 @@ public class ModLangProvider extends LanguageProvider {
             "sus", ""
     );
 
-    public ModLangProvider(PackOutput gen) {
+    public ModLangProvider(DataGenerator gen) {
         super(gen, Constants.MODID, "en_us");
     }
 

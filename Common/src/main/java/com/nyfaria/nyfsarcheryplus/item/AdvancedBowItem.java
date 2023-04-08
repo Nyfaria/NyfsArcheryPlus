@@ -13,6 +13,11 @@ public class AdvancedBowItem extends BowItem {
 	}
 
 	@Override
+	public int getBarWidth(ItemStack $$0) {
+		return super.getBarWidth($$0);
+	}
+
+	@Override
 	public boolean isValidRepairItem(ItemStack p_43311_, ItemStack p_43312_) {
 		return this.tier.getRepairIngredient().test(p_43312_) || super.isValidRepairItem(p_43311_, p_43312_);
 	}

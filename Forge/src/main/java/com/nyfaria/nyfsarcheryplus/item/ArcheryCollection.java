@@ -26,10 +26,10 @@ public class ArcheryCollection<T extends Item> implements IArcherCollection {
     public static ArcheryCollection<Item> registerCollection(ArcheryTiers tier) {
         return new ArcheryCollection<>(
                 tier,
-                ItemInit.ITEMS.register(tier.getName() + "_bow", () -> new AdvancedBowItem(new Item.Properties(),tier)),
-                ItemInit.ITEMS.register(tier.getName() + "_crossbow", () -> new AdvancedCrossBowItem(new Item.Properties(),tier)),
-                ItemInit.ITEMS.register(tier.getName() + "_arrowhead", () -> new Item(new Item.Properties())),
-                ItemInit.ITEMS.register(tier.getName() + "_tipped_arrow", () -> new AdvancedTippedArrowItem(new Item.Properties(),tier))
+                ItemInit.ITEMS.register(tier.getName() + "_bow", () -> new AdvancedBowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT),tier)),
+                ItemInit.ITEMS.register(tier.getName() + "_crossbow", () -> new AdvancedCrossBowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT),tier)),
+                ItemInit.ITEMS.register(tier.getName() + "_arrowhead", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))),
+                ItemInit.ITEMS.register(tier.getName() + "_tipped_arrow", () -> new AdvancedTippedArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT),tier))
         );
     }
     public ArcheryTiers getTier() {
