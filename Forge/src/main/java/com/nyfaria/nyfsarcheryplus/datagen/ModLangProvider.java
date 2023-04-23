@@ -5,6 +5,7 @@ import com.nyfaria.nyfsarcheryplus.Constants;
 import com.nyfaria.nyfsarcheryplus.NyfsArcheryPlus;
 import com.nyfaria.nyfsarcheryplus.init.EntityInit;
 import com.nyfaria.nyfsarcheryplus.init.ItemInit;
+import com.nyfaria.nyfsarcheryplus.registration.RegistryObject;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.entity.EntityType;
@@ -13,7 +14,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.registries.RegistryObject;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;

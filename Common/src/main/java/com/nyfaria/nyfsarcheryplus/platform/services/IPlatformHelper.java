@@ -1,11 +1,5 @@
 package com.nyfaria.nyfsarcheryplus.platform.services;
 
-import com.nyfaria.nyfsarcheryplus.entity.AdvancedTippedArrowEntity;
-import com.nyfaria.nyfsarcheryplus.enums.ArcheryTiers;
-import com.nyfaria.nyfsarcheryplus.interfaces.IArcherCollection;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.Item;
-
 public interface IPlatformHelper {
 
     /**
@@ -39,8 +33,4 @@ public interface IPlatformHelper {
 
         return isDevelopmentEnvironment() ? "development" : "production";
     }
-
-    EntityType<AdvancedTippedArrowEntity> getAdvancedTippedArrowEntity();
-    Item getCommonTippedArrow(ArcheryTiers tier);
-    IArcherCollection getArcherCollection(ArcheryTiers tier);
 }

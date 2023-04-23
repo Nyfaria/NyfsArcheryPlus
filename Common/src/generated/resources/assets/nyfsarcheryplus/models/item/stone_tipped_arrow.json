@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "nyfsarcheryplus:item/stone_tipped_arrow_potion",
+      "predicate": {
+        "color": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "nyfsarcheryplus:item/stone_tipped_arrow"
+  }
+}

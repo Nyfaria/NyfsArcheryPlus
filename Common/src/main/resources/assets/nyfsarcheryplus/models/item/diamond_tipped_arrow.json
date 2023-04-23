@@ -1,6 +1,0 @@
-{
-	"parent": "item/generated",
-	"textures": {
-		"layer0": "nyfsarcheryplus:item/diamond_tipped_arrow"
-		}
-}

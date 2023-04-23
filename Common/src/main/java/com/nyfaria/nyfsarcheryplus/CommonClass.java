@@ -1,5 +1,8 @@
 package com.nyfaria.nyfsarcheryplus;
 
+import com.nyfaria.nyfsarcheryplus.init.EntityInit;
+import com.nyfaria.nyfsarcheryplus.init.ItemInit;
+import com.nyfaria.nyfsarcheryplus.init.RecipeInit;
 import com.nyfaria.nyfsarcheryplus.init.TagInit;
 import com.nyfaria.nyfsarcheryplus.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -16,5 +19,8 @@ public class CommonClass {
     // code that gets invoked by the entry point of the loader specific projects.
     public static void init() {
         TagInit.init();
+        ItemInit.loadClass();
+        EntityInit.loadClass();
+        RecipeInit.loadClass();
     }
 }

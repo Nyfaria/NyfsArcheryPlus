@@ -2,13 +2,10 @@ package com.nyfaria.nyfsarcheryplus.item;
 
 import com.nyfaria.nyfsarcheryplus.enums.ArcheryTiers;
 import com.nyfaria.nyfsarcheryplus.init.ItemInit;
-import com.nyfaria.nyfsarcheryplus.interfaces.IArcherCollection;
-import net.minecraft.world.item.CreativeModeTab;
+import com.nyfaria.nyfsarcheryplus.registration.RegistryObject;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
 
-public class ArcheryCollection<T extends Item> implements IArcherCollection {
+public class ArcheryCollection<T extends Item> {
 
     private final ArcheryTiers tier;
     private final RegistryObject<T> bow;
@@ -16,7 +13,7 @@ public class ArcheryCollection<T extends Item> implements IArcherCollection {
     private final RegistryObject<T> arrowTip;
     private final RegistryObject<T> tippedArrow;
 
-    public ArcheryCollection(ArcheryTiers tier,RegistryObject<T> bow, RegistryObject<T> crossbow, RegistryObject<T> arrowTip, RegistryObject<T> tippedArrow) {
+    public ArcheryCollection(ArcheryTiers tier, RegistryObject<T> bow, RegistryObject<T> crossbow, RegistryObject<T> arrowTip, RegistryObject<T> tippedArrow) {
         this.tier = tier;
         this.bow = bow;
         this.crossbow = crossbow;

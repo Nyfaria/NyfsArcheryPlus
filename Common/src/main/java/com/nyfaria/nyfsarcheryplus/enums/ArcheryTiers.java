@@ -1,5 +1,6 @@
 package com.nyfaria.nyfsarcheryplus.enums;
 
+import com.nyfaria.nyfsarcheryplus.init.ItemInit;
 import com.nyfaria.nyfsarcheryplus.init.TagInit;
 import com.nyfaria.nyfsarcheryplus.platform.Services;
 import net.minecraft.util.LazyLoadedValue;
@@ -14,7 +15,7 @@ public enum ArcheryTiers {
     IRON("iron",4, 1627, 1970, () -> Ingredient.of(Items.IRON_INGOT),() -> Items.BOW),
     GOLD("golden",5, 208,252, ()-> Ingredient.of(Items.GOLD_INGOT),() -> Items.BOW),
     DIAMOND("diamond",6,10160,12303, ()->Ingredient.of(Items.DIAMOND),() -> Items.BOW),
-    NETHERITE("netherite",7,13219,16007, ()->Ingredient.of(Items.NETHERITE_INGOT, Items.NETHERITE_SCRAP), ()-> Services.PLATFORM.getArcherCollection(DIAMOND).getBow());
+    NETHERITE("netherite",7,13219,16007, ()->Ingredient.of(Items.NETHERITE_INGOT, Items.NETHERITE_SCRAP), ()->ItemInit.DIAMOND_COLLECTION.getBow());
 
     private final int damage;
     private final String name;

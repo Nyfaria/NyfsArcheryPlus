@@ -18,7 +18,5 @@ public class NyfsArcheryPlusFabric implements ModInitializer {
         Constants.LOG.info("Hello Fabric world!");
         CommonClass.init();
         CommonInit.preInit();
-        EntityInit.init();
-        ItemInit.init();
     }
 }

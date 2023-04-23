@@ -14,17 +14,5 @@ import net.minecraft.world.level.block.DispenserBlock;
 public class CommonInit {
     public static void preInit() {
 
-
-        for(ArcheryTiers tier :ArcheryTiers.values()) {
-            DispenserBlock.registerBehavior(Services.PLATFORM.getCommonTippedArrow(tier), new AbstractProjectileDispenseBehavior()
-            {
-                @Override
-                protected Projectile getProjectile(Level worldIn, Position position, ItemStack stackIn) {
-                    AdvancedTippedArrowEntity entityArrow = new AdvancedTippedArrowEntity(position.x(), position.y(), position.z(),worldIn , tier);
-                    entityArrow.pickup = AbstractArrow.Pickup.ALLOWED;
-                    return entityArrow;
-                }
-            });
-        }
     }
 }

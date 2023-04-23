@@ -1,5 +1,6 @@
 package com.nyfaria.nyfsarcheryplus;
 
+import com.nyfaria.nyfsarcheryplus.datagen.ModItemModelProvider;
 import com.nyfaria.nyfsarcheryplus.datagen.ModLangProvider;
 import com.nyfaria.nyfsarcheryplus.datagen.ModRecipeProvider;
 import com.nyfaria.nyfsarcheryplus.init.CommonInit;
@@ -20,12 +21,9 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class NyfsArcheryPlus {
     
     public NyfsArcheryPlus() {
-
+        CommonClass.init();
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::setup);
-
-        ItemInit.ITEMS.register(bus);
-        EntityInit.ENTITIES.register(bus);
     }
 
     public void setup(final FMLCommonSetupEvent event) {
@@ -40,6 +38,7 @@ public class NyfsArcheryPlus {
 
         generator.addProvider(includeServer, new ModRecipeProvider(output));
         generator.addProvider(includeClient, new ModLangProvider(output));
+        generator.addProvider(includeServer, new ModItemModelProvider(output, event.getExistingFileHelper()));
 
     }
 }
