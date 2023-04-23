@@ -1,19 +1,10 @@
 package com.nyfaria.nyfsarcheryplus.init;
 
-import com.nyfaria.nyfsarcheryplus.enums.ArcheryTiers;
-import com.nyfaria.nyfsarcheryplus.platform.Services;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CrossbowItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.alchemy.Potions;
 
 public class CommonClientInit {
     public static void clientSetup(){

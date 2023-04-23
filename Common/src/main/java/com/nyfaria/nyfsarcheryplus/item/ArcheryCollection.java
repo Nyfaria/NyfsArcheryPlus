@@ -3,7 +3,15 @@ package com.nyfaria.nyfsarcheryplus.item;
 import com.nyfaria.nyfsarcheryplus.enums.ArcheryTiers;
 import com.nyfaria.nyfsarcheryplus.init.ItemInit;
 import com.nyfaria.nyfsarcheryplus.registration.RegistryObject;
+import net.minecraft.core.NonNullList;
+import net.minecraft.core.Registry;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionUtils;
+
+import java.util.Iterator;
 
 public class ArcheryCollection<T extends Item> {
 
@@ -23,12 +31,13 @@ public class ArcheryCollection<T extends Item> {
     public static ArcheryCollection<Item> registerCollection(ArcheryTiers tier) {
         return new ArcheryCollection<>(
                 tier,
-                ItemInit.ITEMS.register(tier.getName() + "_bow", () -> new AdvancedBowItem(new Item.Properties(),tier)),
-                ItemInit.ITEMS.register(tier.getName() + "_crossbow", () -> new AdvancedCrossBowItem(new Item.Properties(),tier)),
-                ItemInit.ITEMS.register(tier.getName() + "_arrowhead", () -> new Item(new Item.Properties())),
-                ItemInit.ITEMS.register(tier.getName() + "_tipped_arrow", () -> new AdvancedTippedArrowItem(new Item.Properties(),tier))
+                ItemInit.ITEMS.register(tier.getName() + "_bow", () -> new AdvancedBowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT),tier)),
+                ItemInit.ITEMS.register(tier.getName() + "_crossbow", () -> new AdvancedCrossBowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT),tier)),
+                ItemInit.ITEMS.register(tier.getName() + "_arrowhead", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))),
+                ItemInit.ITEMS.register(tier.getName() + "_tipped_arrow", () -> new AdvancedTippedArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT),tier))
         );
     }
+
     public ArcheryTiers getTier() {
         return tier;
     }

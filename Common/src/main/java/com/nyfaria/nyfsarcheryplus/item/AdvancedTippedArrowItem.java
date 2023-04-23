@@ -4,20 +4,25 @@ package com.nyfaria.nyfsarcheryplus.item;
 import com.nyfaria.nyfsarcheryplus.entity.AdvancedTippedArrowEntity;
 import com.nyfaria.nyfsarcheryplus.enums.ArcheryTiers;
 import com.nyfaria.nyfsarcheryplus.platform.Services;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.Position;
+import net.minecraft.core.Registry;
 import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ArrowItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DispenserBlock;
 
 import javax.annotation.Nullable;
+import java.util.Iterator;
 import java.util.List;
 
 public class AdvancedTippedArrowItem extends ArrowItem {
@@ -48,7 +53,20 @@ public class AdvancedTippedArrowItem extends ArrowItem {
 		return arrow;
 	}
 
+	public void fillItemCategory(CreativeModeTab $$0, NonNullList<ItemStack> $$1) {
+		if (this.allowdedIn($$0)) {
+			Iterator var3 = Registry.POTION.iterator();
 
+			while(var3.hasNext()) {
+				Potion $$2 = (Potion)var3.next();
+				if (!$$2.getEffects().isEmpty()) {
+					$$1.add(PotionUtils.setPotion(new ItemStack(this), $$2));
+				}
+			}
+		}
+		super.fillItemCategory($$0, $$1);
+
+	}
 	public ArcheryTiers getTier() {
 		return tier;
 	}

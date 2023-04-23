@@ -2,20 +2,18 @@ package com.nyfaria.nyfsarcheryplus.recipe;
 
 import com.nyfaria.nyfsarcheryplus.init.RecipeInit;
 import com.nyfaria.nyfsarcheryplus.item.AdvancedTippedArrowItem;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 
 public class AdvancedTippedArrowRecipe extends CustomRecipe {
-    public AdvancedTippedArrowRecipe(ResourceLocation location, CraftingBookCategory category) {
-        super(location, category);
+    public AdvancedTippedArrowRecipe(ResourceLocation location) {
+        super(location);
     }
 
     public boolean matches(CraftingContainer grid, Level level) {
@@ -46,7 +44,7 @@ public class AdvancedTippedArrowRecipe extends CustomRecipe {
 
 
 
-    public ItemStack assemble(CraftingContainer container, RegistryAccess registryAccess) {
+    public ItemStack assemble(CraftingContainer container) {
         ItemStack itemstack = container.getItem(1 + container.getWidth());
         if (!itemstack.is(Items.LINGERING_POTION)) {
             return ItemStack.EMPTY;
