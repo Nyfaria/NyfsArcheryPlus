@@ -6,10 +6,11 @@ import com.nyfaria.nyfsarcheryplus.init.ItemInit;
 import com.nyfaria.nyfsarcheryplus.item.ArcheryCollection;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.LegacyLegacyUpgradeRecipeBuilder;
+import net.minecraft.data.recipes.LegacyUpgradeRecipeBuilder;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
-import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -36,7 +37,7 @@ public class ModRecipeProvider extends RecipeProvider {
     }
     public static void archeryCollectionRecipe(TagKey<Item> item, ArcheryCollection<?> collection, Consumer<FinishedRecipe> recipeSaver){
         if(collection.getBow()!=null) {
-            UpgradeRecipeBuilder.smithing(Ingredient.of( collection.getTier().getUpgradeFrom().get()), Ingredient.of(item), RecipeCategory.COMBAT,collection.getBow())
+            LegacyUpgradeRecipeBuilder.smithing(Ingredient.of( collection.getTier().getUpgradeFrom().get()), Ingredient.of(item), RecipeCategory.COMBAT,collection.getBow())
                     .unlocks("has_item", has(item))
                     .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_bow_upgrade"));
 //            ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, collection.getBow())
@@ -69,7 +70,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlocks("has_item", has(item))
                 .save(recipeSaver, new ResourceLocation(Constants.MODID,collection.getTier().getName() + "_arrowhead"));
         if(collection.getCrossbow()!=null) {
-            UpgradeRecipeBuilder.smithing(Ingredient.of(Items.CROSSBOW), Ingredient.of(item), RecipeCategory.COMBAT, collection.getCrossbow())
+            LegacyLegacyUpgradeRecipeBuilder.smithing(Ingredient.of(Items.CROSSBOW), Ingredient.of(item), RecipeCategory.COMBAT, collection.getCrossbow())
                     .unlocks("has_item", has(item))
                     .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_crossbow_upgrade"));
         }
@@ -77,20 +78,20 @@ public class ModRecipeProvider extends RecipeProvider {
     public static void archeryCollectionRecipe(ItemLike item, ArcheryCollection<?> collection, Consumer<FinishedRecipe> recipeSaver){
         if(collection.getTier() != ArcheryTiers.NETHERITE) {
             if (collection.getBow() != null) {
-                UpgradeRecipeBuilder.smithing(Ingredient.of( collection.getTier().getUpgradeFrom().get()), Ingredient.of(item), RecipeCategory.COMBAT,collection.getBow())
+                LegacyUpgradeRecipeBuilder.smithing(Ingredient.of( collection.getTier().getUpgradeFrom().get()), Ingredient.of(item), RecipeCategory.COMBAT,collection.getBow())
                         .unlocks("has_item", has(item))
                         .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_bow_upgrade"));
             }
             if (collection.getCrossbow() != null) {
-                UpgradeRecipeBuilder.smithing(Ingredient.of(Items.CROSSBOW), Ingredient.of(item), RecipeCategory.COMBAT,collection.getCrossbow())
+                LegacyUpgradeRecipeBuilder.smithing(Ingredient.of(Items.CROSSBOW), Ingredient.of(item), RecipeCategory.COMBAT,collection.getCrossbow())
                         .unlocks("has_item", has(item))
                         .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_crossbow_upgrade"));
             }
         } else {
-            UpgradeRecipeBuilder.smithing(Ingredient.of(ItemInit.DIAMOND_COLLECTION.getBow()),Ingredient.of(item), RecipeCategory.COMBAT,collection.getBow())
+            LegacyUpgradeRecipeBuilder.smithing(Ingredient.of(ItemInit.DIAMOND_COLLECTION.getBow()),Ingredient.of(item), RecipeCategory.COMBAT,collection.getBow())
                     .unlocks("has_item", has(item))
                     .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_bow_upgrade"));
-            UpgradeRecipeBuilder.smithing(Ingredient.of(ItemInit.DIAMOND_COLLECTION.getCrossbow()),Ingredient.of(item), RecipeCategory.COMBAT,collection.getCrossbow())
+            LegacyUpgradeRecipeBuilder.smithing(Ingredient.of(ItemInit.DIAMOND_COLLECTION.getCrossbow()),Ingredient.of(item), RecipeCategory.COMBAT,collection.getCrossbow())
                     .unlocks("has_item", has(item))
                     .save(recipeSaver, new ResourceLocation(Constants.MODID, collection.getTier().getName() + "_crossbow_upgrade"));
         }
@@ -104,7 +105,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_item", has(collection.getArrowTip()))
                 .save(recipeSaver);
 
-        ArrowHeadRecipeBuilder.arrowHead(Ingredient.of(Items.FLINT),Ingredient.of(item),RecipeCategory.COMBAT, new ItemStack(collection.getArrowTip(),9))
+        ArrowHeadRecipeBuilder.arrowHead(Ingredient.of(Items.FLINT),Ingredient.of(item),Ingredient.of(),RecipeCategory.COMBAT, new ItemStack(collection.getArrowTip(),9))
                 .unlocks("has_item", has(item))
                 .save(recipeSaver, new ResourceLocation(Constants.MODID,collection.getTier().getName() + "_arrowhead"));
     }
