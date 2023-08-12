@@ -3,7 +3,7 @@ package com.nyfaria.nyfsarcheryplus.datagen;
 import com.nyfaria.nyfsarcheryplus.Constants;
 import com.nyfaria.nyfsarcheryplus.init.ItemInit;
 import com.nyfaria.nyfsarcheryplus.item.ArcheryCollection;
-import net.minecraft.data.PackOutput;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -15,7 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.stream.Stream;
 
 public class ModItemModelProvider extends ItemModelProvider {
-    public ModItemModelProvider(PackOutput generator, ExistingFileHelper existingFileHelper) {
+    public ModItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, Constants.MODID, existingFileHelper);
     }
 

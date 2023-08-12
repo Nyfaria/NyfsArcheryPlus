@@ -1,19 +1,13 @@
 package com.nyfaria.nyfsarcheryplus.init;
 
-import com.nyfaria.nyfsarcheryplus.enums.ArcheryTiers;
-import com.nyfaria.nyfsarcheryplus.platform.Services;
+import com.google.common.collect.Maps;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.client.renderer.item.ItemPropertyFunction;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.alchemy.Potion;
-import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.alchemy.Potions;
 
 public class CommonClientInit {
     public static void clientSetup(){
@@ -40,36 +34,40 @@ public class CommonClientInit {
             boolean flag = p_174625_.hasTag() && p_174625_.getTag().contains("Potion");
             return flag ? 1.0F : 0.0F;
         };
-        ItemProperties.register(ItemInit.STONE_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
-        ItemProperties.register(ItemInit.IRON_COLLECTION.getBow(), new ResourceLocation("pulling"), pulling);
-        ItemProperties.register(ItemInit.IRON_COLLECTION.getBow(), new ResourceLocation("pull"), pull);
-        ItemProperties.register(ItemInit.IRON_COLLECTION.getCrossbow(), new ResourceLocation("pulling"), cbPulling);
-        ItemProperties.register(ItemInit.IRON_COLLECTION.getCrossbow(), new ResourceLocation("pull"), cbPull);
-        ItemProperties.register(ItemInit.IRON_COLLECTION.getCrossbow(), new ResourceLocation("charged"), charged);
-        ItemProperties.register(ItemInit.IRON_COLLECTION.getCrossbow(), new ResourceLocation("firework"), firework);
-        ItemProperties.register(ItemInit.IRON_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
-        ItemProperties.register(ItemInit.GOLD_COLLECTION.getBow(), new ResourceLocation("pulling"), pulling);
-        ItemProperties.register(ItemInit.GOLD_COLLECTION.getBow(), new ResourceLocation("pull"), pull);
-        ItemProperties.register(ItemInit.GOLD_COLLECTION.getCrossbow(), new ResourceLocation("pulling"), cbPulling);
-        ItemProperties.register(ItemInit.GOLD_COLLECTION.getCrossbow(), new ResourceLocation("pull"), cbPull);
-        ItemProperties.register(ItemInit.GOLD_COLLECTION.getCrossbow(), new ResourceLocation("charged"), charged);
-        ItemProperties.register(ItemInit.GOLD_COLLECTION.getCrossbow(), new ResourceLocation("firework"), firework);
-        ItemProperties.register(ItemInit.GOLD_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
-        ItemProperties.register(ItemInit.DIAMOND_COLLECTION.getBow(), new ResourceLocation("pulling"), pulling);
-        ItemProperties.register(ItemInit.DIAMOND_COLLECTION.getBow(), new ResourceLocation("pull"), pull);
-        ItemProperties.register(ItemInit.DIAMOND_COLLECTION.getCrossbow(), new ResourceLocation("pulling"), cbPulling);
-        ItemProperties.register(ItemInit.DIAMOND_COLLECTION.getCrossbow(), new ResourceLocation("pull"), cbPull);
-        ItemProperties.register(ItemInit.DIAMOND_COLLECTION.getCrossbow(), new ResourceLocation("charged"), charged);
-        ItemProperties.register(ItemInit.DIAMOND_COLLECTION.getCrossbow(), new ResourceLocation("firework"), firework);
-        ItemProperties.register(ItemInit.DIAMOND_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
-        ItemProperties.register(ItemInit.NETHERITE_COLLECTION.getBow(), new ResourceLocation("pulling"), pulling);
-        ItemProperties.register(ItemInit.NETHERITE_COLLECTION.getBow(), new ResourceLocation("pull"), pull);
-        ItemProperties.register(ItemInit.NETHERITE_COLLECTION.getCrossbow(), new ResourceLocation("pulling"), cbPulling);
-        ItemProperties.register(ItemInit.NETHERITE_COLLECTION.getCrossbow(), new ResourceLocation("pull"), cbPull);
-        ItemProperties.register(ItemInit.NETHERITE_COLLECTION.getCrossbow(), new ResourceLocation("charged"), charged);
-        ItemProperties.register(ItemInit.NETHERITE_COLLECTION.getCrossbow(), new ResourceLocation("firework"), firework);
-        ItemProperties.register(ItemInit.NETHERITE_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
+        register(ItemInit.STONE_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
+        register(ItemInit.IRON_COLLECTION.getBow(), new ResourceLocation("pulling"), pulling);
+        register(ItemInit.IRON_COLLECTION.getBow(), new ResourceLocation("pull"), pull);
+        register(ItemInit.IRON_COLLECTION.getCrossbow(), new ResourceLocation("pulling"), cbPulling);
+        register(ItemInit.IRON_COLLECTION.getCrossbow(), new ResourceLocation("pull"), cbPull);
+        register(ItemInit.IRON_COLLECTION.getCrossbow(), new ResourceLocation("charged"), charged);
+        register(ItemInit.IRON_COLLECTION.getCrossbow(), new ResourceLocation("firework"), firework);
+        register(ItemInit.IRON_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
+        register(ItemInit.GOLD_COLLECTION.getBow(), new ResourceLocation("pulling"), pulling);
+        register(ItemInit.GOLD_COLLECTION.getBow(), new ResourceLocation("pull"), pull);
+        register(ItemInit.GOLD_COLLECTION.getCrossbow(), new ResourceLocation("pulling"), cbPulling);
+        register(ItemInit.GOLD_COLLECTION.getCrossbow(), new ResourceLocation("pull"), cbPull);
+        register(ItemInit.GOLD_COLLECTION.getCrossbow(), new ResourceLocation("charged"), charged);
+        register(ItemInit.GOLD_COLLECTION.getCrossbow(), new ResourceLocation("firework"), firework);
+        register(ItemInit.GOLD_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
+        register(ItemInit.DIAMOND_COLLECTION.getBow(), new ResourceLocation("pulling"), pulling);
+        register(ItemInit.DIAMOND_COLLECTION.getBow(), new ResourceLocation("pull"), pull);
+        register(ItemInit.DIAMOND_COLLECTION.getCrossbow(), new ResourceLocation("pulling"), cbPulling);
+        register(ItemInit.DIAMOND_COLLECTION.getCrossbow(), new ResourceLocation("pull"), cbPull);
+        register(ItemInit.DIAMOND_COLLECTION.getCrossbow(), new ResourceLocation("charged"), charged);
+        register(ItemInit.DIAMOND_COLLECTION.getCrossbow(), new ResourceLocation("firework"), firework);
+        register(ItemInit.DIAMOND_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
+        register(ItemInit.NETHERITE_COLLECTION.getBow(), new ResourceLocation("pulling"), pulling);
+        register(ItemInit.NETHERITE_COLLECTION.getBow(), new ResourceLocation("pull"), pull);
+        register(ItemInit.NETHERITE_COLLECTION.getCrossbow(), new ResourceLocation("pulling"), cbPulling);
+        register(ItemInit.NETHERITE_COLLECTION.getCrossbow(), new ResourceLocation("pull"), cbPull);
+        register(ItemInit.NETHERITE_COLLECTION.getCrossbow(), new ResourceLocation("charged"), charged);
+        register(ItemInit.NETHERITE_COLLECTION.getCrossbow(), new ResourceLocation("firework"), firework);
+        register(ItemInit.NETHERITE_COLLECTION.getTippedArrow(), new ResourceLocation("color"), arrowColor);
 
     }
-
+    public static void register(Item p_174571_, ResourceLocation p_174572_, ItemPropertyFunction p_174573_) {
+        ItemProperties.PROPERTIES.computeIfAbsent(p_174571_, (p_117828_) -> {
+            return Maps.newHashMap();
+        }).put(p_174572_, p_174573_);
+    }
 }

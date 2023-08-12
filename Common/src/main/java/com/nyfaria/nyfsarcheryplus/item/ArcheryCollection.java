@@ -1,8 +1,10 @@
 package com.nyfaria.nyfsarcheryplus.item;
 
 import com.nyfaria.nyfsarcheryplus.enums.ArcheryTiers;
+import com.nyfaria.nyfsarcheryplus.init.CommonClientInit;
 import com.nyfaria.nyfsarcheryplus.init.ItemInit;
 import com.nyfaria.nyfsarcheryplus.registration.RegistryObject;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
 public class ArcheryCollection<T extends Item> {
@@ -23,10 +25,10 @@ public class ArcheryCollection<T extends Item> {
     public static ArcheryCollection<Item> registerCollection(ArcheryTiers tier) {
         return new ArcheryCollection<>(
                 tier,
-                ItemInit.ITEMS.register(tier.getName() + "_bow", () -> new AdvancedBowItem(new Item.Properties(),tier)),
-                ItemInit.ITEMS.register(tier.getName() + "_crossbow", () -> new AdvancedCrossBowItem(new Item.Properties(),tier)),
-                ItemInit.ITEMS.register(tier.getName() + "_arrowhead", () -> new Item(new Item.Properties())),
-                ItemInit.ITEMS.register(tier.getName() + "_tipped_arrow", () -> new AdvancedTippedArrowItem(new Item.Properties(),tier))
+                ItemInit.ITEMS.register(tier.getName() + "_bow", () -> new AdvancedBowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT),tier)),
+                ItemInit.ITEMS.register(tier.getName() + "_crossbow", () -> new AdvancedCrossBowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT),tier)),
+                ItemInit.ITEMS.register(tier.getName() + "_arrowhead", () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT))),
+                ItemInit.ITEMS.register(tier.getName() + "_tipped_arrow", () -> new AdvancedTippedArrowItem(new Item.Properties().tab(CreativeModeTab.TAB_COMBAT),tier))
         );
     }
     public ArcheryTiers getTier() {

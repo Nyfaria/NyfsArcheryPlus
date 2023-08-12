@@ -6,14 +6,14 @@ import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
-import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CustomRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
 
 public class AdvancedTippedArrowRecipe extends CustomRecipe {
-    public AdvancedTippedArrowRecipe(ResourceLocation location, CraftingBookCategory category) {
-        super(location, category);
+
+    public AdvancedTippedArrowRecipe(ResourceLocation $$0) {
+        super($$0);
     }
 
     public boolean matches(CraftingContainer grid, Level level) {

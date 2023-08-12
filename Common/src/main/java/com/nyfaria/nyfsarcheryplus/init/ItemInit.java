@@ -5,12 +5,12 @@ import com.nyfaria.nyfsarcheryplus.enums.ArcheryTiers;
 import com.nyfaria.nyfsarcheryplus.item.AdvancedTippedArrowItem;
 import com.nyfaria.nyfsarcheryplus.item.ArcheryCollection;
 import com.nyfaria.nyfsarcheryplus.registration.RegistrationProvider;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.core.Registry;
 import net.minecraft.world.item.Item;
 
 public class ItemInit {
 
-	public static final RegistrationProvider<Item> ITEMS = RegistrationProvider.get(Registries.ITEM, Constants.MODID);
+	public static final RegistrationProvider<Item> ITEMS = RegistrationProvider.get(Registry.ITEM, Constants.MODID);
 
 	public static final ArcheryCollection<Item> NETHERITE_COLLECTION = ArcheryCollection.registerCollection(ArcheryTiers.NETHERITE);
 	public static final ArcheryCollection<Item> DIAMOND_COLLECTION = ArcheryCollection.registerCollection(ArcheryTiers.DIAMOND);

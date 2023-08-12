@@ -4,9 +4,8 @@ import com.google.common.collect.Sets;
 import com.nyfaria.nyfsarcheryplus.enums.ArcheryTiers;
 import com.nyfaria.nyfsarcheryplus.init.EntityInit;
 import com.nyfaria.nyfsarcheryplus.init.ItemInit;
-import com.nyfaria.nyfsarcheryplus.platform.Services;
+import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -17,9 +16,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
@@ -113,7 +110,7 @@ public class AdvancedTippedArrowEntity extends AbstractArrow {
 		super.addAdditionalSaveData(tag);
 		tag.putString("tier", tier.name());
 		if (this.potion != Potions.EMPTY) {
-			tag.putString("Potion", BuiltInRegistries.POTION.getKey(this.potion).toString());
+			tag.putString("Potion", Registry.POTION.getKey(this.potion).toString());
 		}
 
 		if (this.fixedColor) {
