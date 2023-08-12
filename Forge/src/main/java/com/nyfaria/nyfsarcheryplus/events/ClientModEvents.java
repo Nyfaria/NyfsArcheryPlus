@@ -31,15 +31,14 @@ public class ClientModEvents {
     public static void clientSetup(FMLClientSetupEvent event) {
         CommonClientInit.clientSetup();
     }
-
     @SubscribeEvent
     public static void onCreativeTabAdd(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == CreativeModeTabs.COMBAT) {
+        if(event.getTab()== CreativeModeTabs.COMBAT){
             ItemInit.ITEMS.getEntries().stream().map(Supplier::get).map(ItemStack::new)
-                    .forEach(stack -> {
+                    .forEach(stack->{
                         event.accept(stack);
-                        if (stack.getItem() instanceof AdvancedTippedArrowItem) {
-                            for (Potion potion : BuiltInRegistries.POTION) {
+                        if(stack.getItem() instanceof AdvancedTippedArrowItem){
+                            for(Potion potion : BuiltInRegistries.POTION) {
                                 if (potion != Potions.EMPTY) {
                                     event.accept(PotionUtils.setPotion(stack.copy(), potion));
                                 }
@@ -48,21 +47,19 @@ public class ClientModEvents {
                     });
         }
     }
-
     @SubscribeEvent
     public static void onEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityInit.ADVANCED_TIPPED_ARROW_ENTITY.get(), AdvancedTippedArrowRenderer::new);
     }
-
     @SubscribeEvent
     public static void onItemColors(RegisterColorHandlersEvent.Item event) {
         Stream.of(
-                        ItemInit.DIAMOND_COLLECTION,
-                        ItemInit.GOLD_COLLECTION,
-                        ItemInit.IRON_COLLECTION,
-                        ItemInit.NETHERITE_COLLECTION,
-                        ItemInit.STONE_COLLECTION
-                ).map(ArcheryCollection::getTippedArrow)
+                ItemInit.DIAMOND_COLLECTION,
+                ItemInit.GOLD_COLLECTION,
+                ItemInit.IRON_COLLECTION,
+                ItemInit.NETHERITE_COLLECTION,
+                ItemInit.STONE_COLLECTION
+        ).map(ArcheryCollection::getTippedArrow)
                 .forEach(item -> event.register((stack, tintIndex) -> {
                     if (tintIndex == 0 && stack.hasTag() && stack.getTag().contains("Potion")) {
                         return PotionUtils.getColor(stack);

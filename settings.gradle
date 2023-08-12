@@ -16,5 +16,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = "nyfsarcheryplus"
+rootProject.name = "nfsarcheryplus"
 include("Common", "Fabric", "Forge")

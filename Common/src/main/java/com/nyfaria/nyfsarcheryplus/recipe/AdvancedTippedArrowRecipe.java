@@ -1,8 +1,6 @@
 package com.nyfaria.nyfsarcheryplus.recipe;
 
-import com.nyfaria.nyfsarcheryplus.init.RecipeInit;
 import com.nyfaria.nyfsarcheryplus.item.AdvancedTippedArrowItem;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.ItemStack;
@@ -44,9 +42,7 @@ public class AdvancedTippedArrowRecipe extends CustomRecipe {
         return false;
     }
 
-
-
-    public ItemStack assemble(CraftingContainer container, RegistryAccess registryAccess) {
+    public ItemStack assemble(CraftingContainer container) {
         ItemStack itemstack = container.getItem(1 + container.getWidth());
         if (!itemstack.is(Items.LINGERING_POTION)) {
             return ItemStack.EMPTY;
@@ -63,6 +59,6 @@ public class AdvancedTippedArrowRecipe extends CustomRecipe {
     }
 
     public RecipeSerializer<?> getSerializer() {
-        return RecipeInit.ADVANCED_TIPPED_ARROW.get();
+        return RecipeSerializer.TIPPED_ARROW;
     }
 }
