@@ -25,7 +25,7 @@ public class ModLangProvider extends LanguageProvider {
     );
 
     public ModLangProvider(DataGenerator gen) {
-        super(gen, Constants.MODID, "en_us");
+        super(gen.getPackOutput(), Constants.MODID, "en_us");
     }
 
     @Override

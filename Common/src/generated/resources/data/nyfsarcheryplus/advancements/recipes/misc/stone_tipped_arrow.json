@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:netherite_ingot"
+              "nyfsarcheryplus:stone_arrowhead"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nyfsarcheryplus:netherite_bow_upgrade"
+        "recipe": "nyfsarcheryplus:stone_tipped_arrow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "nyfsarcheryplus:netherite_bow_upgrade"
+      "nyfsarcheryplus:stone_tipped_arrow"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

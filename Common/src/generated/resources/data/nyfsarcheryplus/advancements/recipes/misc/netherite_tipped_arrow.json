@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:diamond"
+              "nyfsarcheryplus:netherite_arrowhead"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nyfsarcheryplus:diamond_crossbow_upgrade"
+        "recipe": "nyfsarcheryplus:netherite_tipped_arrow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "nyfsarcheryplus:diamond_crossbow_upgrade"
+      "nyfsarcheryplus:netherite_tipped_arrow"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

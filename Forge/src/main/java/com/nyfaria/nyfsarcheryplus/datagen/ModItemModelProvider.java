@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
-        super(generator, Constants.MODID, existingFileHelper);
+        super(generator.getPackOutput(), Constants.MODID, existingFileHelper);
     }
 
     @Override

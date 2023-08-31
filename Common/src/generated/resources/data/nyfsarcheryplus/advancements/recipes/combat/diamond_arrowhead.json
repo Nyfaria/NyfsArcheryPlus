@@ -30,5 +30,6 @@
     "recipes": [
       "nyfsarcheryplus:diamond_arrowhead"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

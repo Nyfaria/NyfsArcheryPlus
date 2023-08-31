@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "nyfsarcheryplus:diamond_arrowhead"
+              "minecraft:iron_ingot"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nyfsarcheryplus:diamond_tipped_arrow"
+        "recipe": "nyfsarcheryplus:iron_bow_upgrade"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "nyfsarcheryplus:diamond_tipped_arrow"
+      "nyfsarcheryplus:iron_bow_upgrade"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:diamond"
+              "minecraft:gold_ingot"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nyfsarcheryplus:diamond_bow_upgrade"
+        "recipe": "nyfsarcheryplus:golden_crossbow_upgrade"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "nyfsarcheryplus:diamond_bow_upgrade"
+      "nyfsarcheryplus:golden_crossbow_upgrade"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

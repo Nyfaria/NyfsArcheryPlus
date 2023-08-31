@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "nyfsarcheryplus:stone_arrowhead"
+              "nyfsarcheryplus:diamond_arrowhead"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nyfsarcheryplus:stone_tipped_arrow"
+        "recipe": "nyfsarcheryplus:diamond_tipped_arrow"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "nyfsarcheryplus:stone_tipped_arrow"
+      "nyfsarcheryplus:diamond_tipped_arrow"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

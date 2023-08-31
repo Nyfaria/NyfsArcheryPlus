@@ -1,6 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "equipment",
+  "category": "misc",
   "key": {
     "F": {
       "item": "minecraft:feather"
@@ -19,5 +19,6 @@
   ],
   "result": {
     "item": "nyfsarcheryplus:diamond_tipped_arrow"
-  }
+  },
+  "show_notification": true
 }

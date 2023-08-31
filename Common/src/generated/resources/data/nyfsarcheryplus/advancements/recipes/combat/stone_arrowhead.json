@@ -28,5 +28,6 @@
     "recipes": [
       "nyfsarcheryplus:stone_arrowhead"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "nyfsarcheryplus:netherite_arrowhead"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

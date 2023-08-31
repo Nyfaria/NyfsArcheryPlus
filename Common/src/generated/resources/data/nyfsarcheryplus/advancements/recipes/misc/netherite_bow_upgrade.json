@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "minecraft:gold_ingot"
+              "minecraft:netherite_ingot"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "nyfsarcheryplus:golden_bow_upgrade"
+        "recipe": "nyfsarcheryplus:netherite_bow_upgrade"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,8 @@
   ],
   "rewards": {
     "recipes": [
-      "nyfsarcheryplus:golden_bow_upgrade"
+      "nyfsarcheryplus:netherite_bow_upgrade"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

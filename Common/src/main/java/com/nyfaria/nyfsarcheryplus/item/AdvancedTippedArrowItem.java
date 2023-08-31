@@ -52,19 +52,19 @@ public class AdvancedTippedArrowItem extends ArrowItem {
 		arrow.setEffectsFromItem(stack);
 		return arrow;
 	}
-	public void fillItemCategory(CreativeModeTab $$0, NonNullList<ItemStack> $$1) {
-		if (this.allowedIn($$0)) {
-			Iterator var3 = Registry.POTION.iterator();
-
-			while(var3.hasNext()) {
-				Potion $$2 = (Potion)var3.next();
-				if (!$$2.getEffects().isEmpty()) {
-					$$1.add(PotionUtils.setPotion(new ItemStack(this), $$2));
-				}
-			}
-		}
-
-	}
+//	public void fillItemCategory(CreativeModeTab $$0, NonNullList<ItemStack> $$1) {
+//		if (this.allowedIn($$0)) {
+//			Iterator var3 = Registry.POTION.iterator();
+//
+//			while(var3.hasNext()) {
+//				Potion $$2 = (Potion)var3.next();
+//				if (!$$2.getEffects().isEmpty()) {
+//					$$1.add(PotionUtils.setPotion(new ItemStack(this), $$2));
+//				}
+//			}
+//		}
+//
+//	}
 
 	public ArcheryTiers getTier() {
 		return tier;

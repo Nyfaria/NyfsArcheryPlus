@@ -6,6 +6,8 @@ import com.nyfaria.nyfsarcheryplus.init.EntityInit;
 import com.nyfaria.nyfsarcheryplus.init.ItemInit;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -110,7 +112,7 @@ public class AdvancedTippedArrowEntity extends AbstractArrow {
 		super.addAdditionalSaveData(tag);
 		tag.putString("tier", tier.name());
 		if (this.potion != Potions.EMPTY) {
-			tag.putString("Potion", Registry.POTION.getKey(this.potion).toString());
+			tag.putString("Potion", BuiltInRegistries.POTION.getKey(this.potion).toString());
 		}
 
 		if (this.fixedColor) {
@@ -183,7 +185,7 @@ public class AdvancedTippedArrowEntity extends AbstractArrow {
 
 	public void tick() {
 		super.tick();
-		if (this.level.isClientSide) {
+		if (this.level().isClientSide) {
 			if (this.inGround) {
 				if (this.inGroundTime % 5 == 0) {
 					this.makeParticle(1);
@@ -192,7 +194,7 @@ public class AdvancedTippedArrowEntity extends AbstractArrow {
 				this.makeParticle(2);
 			}
 		} else if (this.inGround && this.inGroundTime != 0 && !this.effects.isEmpty() && this.inGroundTime >= 600) {
-			this.level.broadcastEntityEvent(this, (byte)0);
+			this.level().broadcastEntityEvent(this, (byte)0);
 			this.potion = Potions.EMPTY;
 			this.effects.clear();
 			this.entityData.set(ID_EFFECT_COLOR, -1);
@@ -208,7 +210,7 @@ public class AdvancedTippedArrowEntity extends AbstractArrow {
 			double d2 = (double)(i >> 0 & 255) / 255.0D;
 
 			for(int j = 0; j < p_36877_; ++j) {
-				this.level.addParticle(ParticleTypes.ENTITY_EFFECT, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), d0, d1, d2);
+				this.level().addParticle(ParticleTypes.ENTITY_EFFECT, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), d0, d1, d2);
 			}
 
 		}
@@ -271,7 +273,7 @@ public class AdvancedTippedArrowEntity extends AbstractArrow {
 				double d2 = (double)(i >> 0 & 255) / 255.0D;
 
 				for(int j = 0; j < 20; ++j) {
-					this.level.addParticle(ParticleTypes.ENTITY_EFFECT, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), d0, d1, d2);
+					this.level().addParticle(ParticleTypes.ENTITY_EFFECT, this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D), d0, d1, d2);
 				}
 			}
 		} else {
