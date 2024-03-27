@@ -1,3 +1,6 @@
+### Version 1.1.1
+- fixed fabric AWs
+
 ### Version 1.1.0
 - added potion arrows
 
